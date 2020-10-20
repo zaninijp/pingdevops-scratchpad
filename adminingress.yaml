@@ -1,0 +1,72 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"extensions/v1beta1","kind":"Ingress","metadata":{"annotations":{"kubernetes.io/ingress.class":"nginx-public-passthrough","nginx.ingress.kubernetes.io/backend-protocol":"HTTPS","nginx.ingress.kubernetes.io/force-ssl-redirect":"true","nginx.ingress.kubernetes.io/service-upstream":"true","nginx.ingress.kubernetes.io/ssl-passthrough":"true"},"name":"pingadminconsoles-ingress","namespace":"ping-cloud-devops-eks-joezanini"},"spec":{"rules":[{"host":"ping-cloud-devops-eks-joezanini.ping-devops.com","http":{"paths":[{"backend":{"serviceName":"pingaccess","servicePort":9000}}]}},{"host":"ping-cloud-devops-eks-joezanini.ping-devops.com","http":{"paths":[{"backend":{"serviceName":"pingfederate","servicePort":443}}]}},{"host":"ping-cloud-devops-eks-joezanini.ping-devops.com","http":{"paths":[{"backend":{"serviceName":"pingdataconsole","servicePort":8443}}]}},{"host":"ping-cloud-devops-eks-joezanini.ping-devops.com","http":{"paths":[{"backend":{"serviceName":"pingdatagov-pap","servicePort":443}}]}},{"host":"ping-cloud-devops-eks-joezanini.ping-devops.com","http":{"paths":[{"backend":{"serviceName":"pingcentral","servicePort":9022}}]}},{"host":"ping-cloud-devops-eks-joezanini.ping-devops.com","http":{"paths":[{"backend":{"serviceName":"pingdirectory","servicePort":443}}]}},{"host":"ping-cloud-devops-eks-joezanini.ping-devops.com","http":{"paths":[{"backend":{"serviceName":"pingdatagov","servicePort":443}}]}},{"host":"ping-cloud-devops-eks-joezanini.ping-devops.com","http":{"paths":[{"backend":{"serviceName":"pingdatagov-pap","servicePort":443}}]}}]}}
+    kubernetes.io/ingress.class: nginx-public-passthrough
+    nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/service-upstream: "true"
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+  creationTimestamp: "2020-09-25T13:58:22Z"
+  generation: 3
+  name: pingadminconsoles-ingress
+  namespace: ping-cloud-devops-eks-joezanini
+  resourceVersion: "65412525"
+  selfLink: /apis/extensions/v1beta1/namespaces/ping-cloud-devops-eks-joezanini/ingresses/pingadminconsoles-ingress
+  uid: bf203c08-8d4b-4d2a-b6e6-ec54e7a49091
+spec:
+  rules:
+  - host: pingaccess-ping-cloud-devops-eks-joezanini.ping-devops.com
+    http:
+      paths:
+      - backend:
+          serviceName: pingaccess
+          servicePort: 9000
+  - host: pingfederate-ping-cloud-devops-eks-joezanini.ping-devops.com
+    http:
+      paths:
+      - backend:
+          serviceName: pingfederate
+          servicePort: 9999
+  - host: pingdataconsole-ping-cloud-devops-eks-joezanini.ping-devops.com
+    http:
+      paths:
+      - backend:
+          serviceName: pingdataconsole
+          servicePort: 8443
+  - host: pingdatagov-pap-ping-cloud-devops-eks-joezanini.ping-devops.com
+    http:
+      paths:
+      - backend:
+          serviceName: pingdatagov-pap
+          servicePort: 443
+  - host: pingcentral-ping-cloud-devops-eks-joezanini.ping-devops.com
+    http:
+      paths:
+      - backend:
+          serviceName: pingcentral
+          servicePort: 9022
+  - host: pingdirectory-ping-cloud-devops-eks-joezanini.ping-devops.com
+    http:
+      paths:
+      - backend:
+          serviceName: pingdirectory
+          servicePort: 443
+  - host: pingdatagov-ping-cloud-devops-eks-joezanini.ping-devops.com
+    http:
+      paths:
+      - backend:
+          serviceName: pingdatagov
+          servicePort: 443
+  - host: pingdatagov-pap-ping-cloud-devops-eks-joezanini.ping-devops.com
+    http:
+      paths:
+      - backend:
+          serviceName: pingdatagov-pap
+          servicePort: 443
+status:
+  loadBalancer:
+    ingress:
+    - hostname: ad620bbbd689011eab84c02546501ac8-9ce5500c3bca3a05.elb.us-east-2.amazonaws.com
